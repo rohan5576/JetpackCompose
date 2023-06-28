@@ -70,4 +70,19 @@ AndroidView(
 You need to add @Preview() annotation before the composable function. After adding this annotation we are able to see the preview of our UI.\
 we can customise the preview annotation by using below features:-
 
-Name,Background,Height and Width ,SystemUI and Device,Multiple Previews ,
+Name,Background,Height and Width ,SystemUI and Device,Multiple Previews.
+
+
+<b> Text Resources </b>
+
+![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/f708617a-a068-44ab-b58c-968528e3194f)
+
+<b> Image Resources </b>
+
+![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/10788784-87ce-4d30-90c1-89d92c7e9f93)
+
+<b> Button Resources</b>
+
+![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/205d9532-0491-44f9-9628-6f736d5ad515)
+
+

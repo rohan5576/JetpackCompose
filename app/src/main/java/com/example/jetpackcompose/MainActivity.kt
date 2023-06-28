@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
@@ -31,7 +33,7 @@ class MainActivity : ComponentActivity() {
         Text(text)
     }*/
 
-  @Preview(showBackground = true, widthDp = 100, heightDp = 100)
+  /*@Preview(showBackground = true, widthDp = 100, heightDp = 100)
     @Composable
     fun useTextResources(){
         Text(
@@ -50,6 +52,17 @@ class MainActivity : ComponentActivity() {
             colorFilter = ColorFilter.tint(Color.Red),
             contentScale = ContentScale.Crop
             )
+    }*/
+
+    @Preview(widthDp = 100, heightDp = 80)
+    @Composable
+    fun useButtonResources(){
+        Button(onClick = {  }, enabled =true,
+        colors = ButtonDefaults.buttonColors(containerColor = Color.Green,)) {
+            Text(text = "Start")
+            Image(painter = painterResource(id = R.drawable.baseline_3g_mobiledata_24),
+                contentDescription = "Button content")
+        }
     }
 
 }

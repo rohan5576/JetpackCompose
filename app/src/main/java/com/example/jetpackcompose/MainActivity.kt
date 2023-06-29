@@ -1,23 +1,19 @@
 package com.example.jetpackcompose
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 
 class MainActivity : ComponentActivity() {
@@ -69,7 +65,7 @@ class MainActivity : ComponentActivity() {
         }
     }*/
 
-    @Preview(widthDp = 100, heightDp = 100)
+  /*  @Preview(widthDp = 100, heightDp = 100)
     @Composable
     fun useTextFieldResources(){
         val state = remember{mutableStateOf("")}
@@ -78,5 +74,22 @@ class MainActivity : ComponentActivity() {
         label = {
             Text(text = "Enter Data")
         })
+    }*/
+
+
+    @Preview(showBackground = true)
+    @Composable
+    fun TextFieldWithIcons() {
+        var text by remember { mutableStateOf(TextFieldValue("")) }
+        return OutlinedTextField(
+            value = text,
+            leadingIcon = { Icon(imageVector = Icons.Default.Email, contentDescription = "emailIcon") },
+            //trailingIcon = { Icon(imageVector = Icons.Default.Add, contentDescription = null) },
+            onValueChange = {
+                text = it
+            },
+            label = { Text(text = "Email address") },
+            placeholder = { Text(text = "Enter your e-mail") },
+        )
     }
 }

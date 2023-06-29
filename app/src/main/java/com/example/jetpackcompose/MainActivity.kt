@@ -1,23 +1,36 @@
 package com.example.jetpackcompose
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 
 class MainActivity : ComponentActivity() {
@@ -27,7 +40,7 @@ class MainActivity : ComponentActivity() {
             Text(text = "Let's start Jetpack Compose.")
     }
 }
-   /* @Preview(name = "SampleApp", device = "spec:width=1080px,height=2340px,dpi=440,isRound=true",
+    /*@Preview(name = "SampleApp", device = "spec:width=1080px,height=2340px,dpi=440,isRound=true",
         showBackground = true, showSystemUi = true, backgroundColor = 0xFF673AB7,
         uiMode = Configuration.UI_MODE_NIGHT_NO or Configuration.UI_MODE_TYPE_NORMAL
     )
@@ -37,7 +50,6 @@ class MainActivity : ComponentActivity() {
         Text(text)
     }*/
 
-  /*@Preview(showBackground = true, widthDp = 100, heightDp = 100)
     @Composable
     fun useTextResources(){
         Text(
@@ -47,7 +59,6 @@ class MainActivity : ComponentActivity() {
             color = Color.Green)
     }
 
-    @Preview(widthDp = 200, heightDp = 300)
     @Composable
     fun useImageResources(){
         Image(
@@ -56,9 +67,8 @@ class MainActivity : ComponentActivity() {
             colorFilter = ColorFilter.tint(Color.Red),
             contentScale = ContentScale.Crop
             )
-    }*/
+    }
 
-   /* @Preview(widthDp = 100, heightDp = 80)
     @Composable
     fun useButtonResources(){
         Button(onClick = {  }, enabled =true,
@@ -67,9 +77,8 @@ class MainActivity : ComponentActivity() {
             Image(painter = painterResource(id = R.drawable.baseline_3g_mobiledata_24),
                 contentDescription = "Button content")
         }
-    }*/
+    }
 
-    @Preview(widthDp = 100, heightDp = 100)
     @Composable
     fun useTextFieldResources(){
         val state = remember{mutableStateOf("")}
@@ -78,5 +87,48 @@ class MainActivity : ComponentActivity() {
         label = {
             Text(text = "Enter Data")
         })
+    }
+
+
+    @Composable
+    fun TextFieldWithIcons() {
+        var text by remember { mutableStateOf(TextFieldValue("")) }
+        return OutlinedTextField(
+            value = text,
+            leadingIcon = { Icon(imageVector = Icons.Default.Email, contentDescription = "emailIcon") },
+            //trailingIcon = { Icon(imageVector = Icons.Default.Add, contentDescription = null) },
+            onValueChange = {
+                text = it
+            },
+            label = { Text(text = "Email address") },
+            placeholder = { Text(text = "Enter your e-mail") },
+        )
+    }
+
+    @Composable
+    private fun useColumnComposable(){
+        Column(verticalArrangement = Arrangement.Center,
+            horizontalAlignment =Alignment.CenterHorizontally ) {
+            Text(text = "First Item")
+            Text(text = "Second Item")
+        }
+    }
+    @Composable
+    private fun useRowComposable(){
+        Row(horizontalArrangement = Arrangement.Start,
+            verticalAlignment =Alignment.CenterVertically ) {
+            Text(text = "First Item")
+            Text(text = "Second Item")
+        }
+    }
+
+    @Preview
+    @Composable
+    private fun useBoxComposable(){
+        Box() {
+            Image(painter = painterResource(id = R.drawable.baseline_3g_mobiledata_24),
+                contentDescription = "Button content")
+           Text(text = "Box")
+        }
     }
 }

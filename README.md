@@ -85,4 +85,39 @@ Name,Background,Height and Width ,SystemUI and Device,Multiple Previews.
 
 ![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/205d9532-0491-44f9-9628-6f736d5ad515)
 
+<b> Text Field </b>
+ TextField is a user interface control that is used to allow the user to enter the text. This widget is used to get the data from the user as numbers or text. 
+ 
+![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/8f6160d8-c01a-4172-8f73-9f6dfe6ef6c7)
+
+<b>mutable state</b> -  It returns an observable value for Compose. If the value changes UI gets changed automatically. 
+<b>TextFieldValue</b> - A class holding information about the editing state. 
+
+<b>In TextField() function, we use two arguments, value & onValueChange</b>
+
+ value - We need to set the TextFieldValue. We created a variable (text) for this. And we assigned text to this argument.
+
+ onValueChange - It will return a new value (TextFieldValue)  when the user enters the text. 
+
+ ![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/45549b74-3a36-4819-9302-e7a283a5a2b4)
+
+
+ <b> Row and columns </b>
+ It provides an invisible container to hold the views or layouts. We can place a group of views/layouts inside the layouts. Row and column are layouts to arrange our views in a Linear manner. 
+
+ Row - It arranges the views horizontally.
+ 
+ Column - It arranges the views vertically. 
+
+ ![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/a035fa1d-226a-4490-9a63-a17704fc8caa)
+
+ ![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/be6b80a2-8c86-4e84-81ec-1e7d22db719b)
+
+Example :
+
+![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/cf9db24a-37ab-4218-9d1a-2f2b35602dab)
+
+![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/ad9fe55a-2ee8-46f3-bab7-51579a669e30)
+
+
 

@@ -120,4 +120,7 @@ Example :
 ![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/ad9fe55a-2ee8-46f3-bab7-51579a669e30)
 
 
+<b>Modifier</b>
+Modifier elements decorate or add behavior to Compose UI elements. 
+
 

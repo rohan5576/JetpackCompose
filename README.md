@@ -123,4 +123,13 @@ Example :
 <b>Modifier</b>
 Modifier elements decorate or add behavior to Compose UI elements. 
 
+![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/bee4980d-e7ae-4562-a04e-43e28fe09b6b)
+
+![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/705da648-c9f2-42c9-a4d8-0ce6d89bbce7)
+
+
+
+<b>List In Compose</b>
+
+![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/c53ea2b1-f14c-4878-b39a-d1f6b2aac16a)
 

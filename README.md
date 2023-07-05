@@ -128,6 +128,23 @@ Modifier elements decorate or add behavior to Compose UI elements.
 ![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/705da648-c9f2-42c9-a4d8-0ce6d89bbce7)
 
 
+<b> Recomposition</b>
+ Calling compose repeatedly.
+
+ State<T>
+ A type that holds a read-only value: It notifies the composition when value changes.
+
+
+MutableState<T>
+It's extension function of State. It allows us to update the value. 
+When the value property is written to and changed, a recomposition of any subscribed RecomposeScopes will be scheduled.
+
+<b> Points to remember</b>
+1. Compose functions can execute in any order
+2. Compose functions can run in parallel
+   
+ 
+
 
 <b>List In Compose</b>
 

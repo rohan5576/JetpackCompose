@@ -128,8 +128,41 @@ Modifier elements decorate or add behavior to Compose UI elements.
 ![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/705da648-c9f2-42c9-a4d8-0ce6d89bbce7)
 
 
+<b> Recomposition</b>
+ Calling compose repeatedly.
+
+ State<T>
+ A type that holds a read-only value: It notifies the composition when value changes.
+
+
+MutableState<T>
+It's extension function of State. It allows us to update the value. 
+When the value property is written to and changed, a recomposition of any subscribed RecomposeScopes will be scheduled.
+
+<b> Points to remember</b>
+1. Compose functions can execute in any order
+2. Compose functions can run in parallel
+   
 
 <b>List In Compose</b>
 
 ![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/c53ea2b1-f14c-4878-b39a-d1f6b2aac16a)
+
+
+<b>remember</b>
+remember - allows you to remember state from previous recompose invocation and just this. 
+
+remember = store the value just in case recompose is called.
+
+Now, the second important thing is knowing when reCompose should actually be triggered and there the mutable states come to help.
+
+mutable state = store the value and in case I update the value trigger, recompose for all elements using this data.
+
+
+![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/f841d1aa-6819-4561-9e34-4bccd09a5c18)
+
+
+<b>rememberSaveable </b>
+
+
 

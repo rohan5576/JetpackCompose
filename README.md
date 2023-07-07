@@ -163,6 +163,9 @@ mutable state = store the value and in case I update the value trigger, recompos
 
 
 <b>rememberSaveable </b>
+It saves the calculated value into a Bundle (if it’s possible) on configuration change and can therefore restore it when the Activity or Fragment got recreated. For example on orientation change, split screen, or process death.
+
+![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/30dae8b1-839f-427f-83df-1e6bf8be98a4)
 
 
 

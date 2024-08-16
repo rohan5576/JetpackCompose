@@ -1,5 +1,6 @@
 package com.example.jetpackcompose
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -31,6 +32,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -38,12 +40,13 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.example.tweetsyapp.TweetActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Text(text = "Let's start Jetpack Compose.")
+            useButtonResources()
     }
 }
     /*@Preview(name = "SampleApp", device = "spec:width=1080px,height=2340px,dpi=440,isRound=true",
@@ -77,11 +80,14 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun useButtonResources(){
-        Button(onClick = {  }, enabled =true,
+        val context = LocalContext.current
+        Button(onClick = {
+            context.startActivity(Intent(this, TweetActivity::class.java))
+        }, enabled =true,
         colors = ButtonDefaults.buttonColors(containerColor = Color.Green,)) {
-            Text(text = "Start")
-            Image(painter = painterResource(id = R.drawable.baseline_3g_mobiledata_24),
-                contentDescription = "Button content")
+            Text(text = "TweetsyApp")
+           /* Image(painter = painterResource(id = R.drawable.baseline_3g_mobiledata_24),
+                contentDescription = "Button content")*/
         }
     }
 

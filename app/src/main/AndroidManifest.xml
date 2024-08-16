@@ -13,6 +13,21 @@
         android:theme="@style/Theme.JetpackCompose"
         tools:targetApi="31">
         <activity
+            android:name=".sideeffect.ComposeSideEffect"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Recomposition"
+            android:exported="false" />
+        <activity
+            android:name=".sideeffects.LaunchedEffectActivity"
+            android:exported="false" />
+        <activity
             android:name=".day6.RememberSaveableActivity"
             android:exported="false" />
         <activity

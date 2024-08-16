@@ -40,13 +40,14 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.example.tweetsyapp.R
 import com.example.tweetsyapp.TweetActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            useButtonResources()
+            startActivity(Intent(this, TweetActivity::class.java))
     }
 }
     /*@Preview(name = "SampleApp", device = "spec:width=1080px,height=2340px,dpi=440,isRound=true",
@@ -82,7 +83,7 @@ class MainActivity : ComponentActivity() {
     fun useButtonResources(){
         val context = LocalContext.current
         Button(onClick = {
-            context.startActivity(Intent(this, TweetActivity::class.java))
+
         }, enabled =true,
         colors = ButtonDefaults.buttonColors(containerColor = Color.Green,)) {
             Text(text = "TweetsyApp")
@@ -138,7 +139,7 @@ class MainActivity : ComponentActivity() {
     @Composable
     private fun useBoxComposable(){
         Box() {
-            Image(painter = painterResource(id = R.drawable.baseline_3g_mobiledata_24),
+            Image(painter = painterResource(id = R.drawable.ic_launcher_background),
                 contentDescription = "Button content")
            Text(text = "Box")
         }

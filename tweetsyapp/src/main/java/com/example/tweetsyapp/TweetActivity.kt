@@ -3,6 +3,7 @@ package com.example.tweetsyapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import com.example.jetpackcompose.ui.theme.JetpackComposeTheme
 import com.example.tweetsyapp.screens.CategoryScreen
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -12,8 +13,9 @@ class TweetActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            CategoryScreen()
+            JetpackComposeTheme {
+                CategoryScreen()
+            }
         }
     }
-
 }

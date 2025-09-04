@@ -167,5 +167,6 @@ It saves the calculated value into a Bundle (if it’s possible) on configuratio
 
 ![image](https://github.com/rohan5576/JetpackCompose/assets/22514415/30dae8b1-839f-427f-83df-1e6bf8be98a4)
 
+------
 
-
+In Jetpack Compose, remember keeps state only while the screen is alive, but it’s lost on rotation or process death. rememberSaveable fixes this by storing state in SavedInstanceState, so it survives config changes and process restarts — but only for simple types (Int, String, Boolean, Parcelable, etc.). For custom objects or complex UI states (like LazyListState, PagerState, or your own data class), you need a custom Saver, which tells Compose how to "pack" your object into a saveable form (like a List, Pair, or Bundle) and "unpack" it later. This ensures your UI restores exactly where the user left off, even after process death — making custom savers the real safety net for advanced state persistence.
